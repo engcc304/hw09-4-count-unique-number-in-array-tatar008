@@ -47,3 +47,31 @@
         7 -> 1 value.
         9 -> 2 values.
 */
+#include<stdio.h>
+int main() {
+    int arr[100] ;
+    int num ;
+    int i ;
+    printf( "input N :\n" ) ;
+    scanf( "%d", &num ) ;
+
+    for(i = 0 ; i < num ; i++ ) {
+        printf( "Element[%d] : \n" ) ;
+        scanf( "    %d", &arr[i] ) ;
+    }
+
+    int count[1000] = {0}; 
+    
+    for (int i = 0 ; i < num ; i++) {
+        count[arr[i]]++;
+    }
+
+    for (int i = 0 ; i < 1000 ; i++) {
+        if (count[i] > 0) {
+            printf("%d -> %d value(s).\n", i, count[i]);
+        }
+    }
+
+    return 0 ;
+
+}
